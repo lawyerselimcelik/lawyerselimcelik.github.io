@@ -13,6 +13,11 @@
   <link href="images/favicon.png" rel="icon">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Canonical & hreflang (will be updated by JS for lang-specific SEO) -->
+  <link id="canonical-link" rel="canonical" href="" />
+  <link id="alt-en" rel="alternate" hreflang="en" href="" />
+  <link id="alt-tr" rel="alternate" hreflang="tr" href="" />
+  <link rel="alternate" hreflang="x-default" href="" id="alt-default" />
   <style>
     :root{ --green:#1c9a5f; --bg:#ffffff; --text:#0b1220; --muted:#64748b; --card:#ffffff; --border:#e2e8f0; --pill-bg:rgba(255,255,255,0.18); --pill-text:#f5f5f5; --hero-overlay:rgba(0,0,0,.45) }
     body.dark{ --bg:#0b1220; --text:#e5e7eb; --muted:#a3b0c2; --card:#111827; --border:#273243; --pill-bg:rgba(17,24,39,0.45); --pill-text:#e5e7eb; --hero-overlay:rgba(0,0,0,.55) }
@@ -29,7 +34,7 @@
     .controls{display:flex;align-items:center;gap:10px}
     .btn{border:1px solid var(--border);padding:6px 10px;border-radius:10px;background:transparent;cursor:pointer;color:var(--text);display:flex;align-items:center;gap:8px}
     .btn svg{width:16px;height:16px}
-    .hero{position:relative;padding:140px 0 120px;background:url('images/main\ page.jpeg') center/cover no-repeat}
+    .hero{position:relative;padding:140px 0 120px;background:url('images/main-page.png') center/cover no-repeat}
     .hero::after{content:"";position:absolute;inset:0;background:var(--hero-overlay)}
     .hero .inner{position:relative;z-index:1;text-align:left}
     .hero h1{font-size:clamp(26px,5vw,42px);line-height:1.2;margin:12px 0;color:#fff}
@@ -72,16 +77,115 @@
     [data-lang="tr"]{display:none}
   </style>
   <script>
-    function setLang(lang){document.querySelectorAll('[data-lang]').forEach(el=>{el.style.display=(el.getAttribute('data-lang')===lang)?'block':'none'});document.querySelectorAll('[data-show-lang]').forEach(el=>{el.textContent=lang.toUpperCase()});localStorage.setItem('fides_lang',lang)}
-    function setTheme(mode){const body=document.body;if(mode==='dark'){body.classList.add('dark')}else{body.classList.remove('dark')}localStorage.setItem('fides_theme',mode);document.querySelectorAll('[data-show-theme]').forEach(el=>{el.textContent=mode==='dark'?'Dark':'Light'})}
-    document.addEventListener('DOMContentLoaded',()=>{const cachedLang=localStorage.getItem('fides_lang')||'en';setLang(cachedLang);const cachedTheme=localStorage.getItem('fides_theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');setTheme(cachedTheme)})
+    // ---------- SEO i18n helpers ----------
+    const SEO = {
+      en: {
+        lang: 'en',
+        title: 'Fides Legal | Your Trusted Legal Partner in Turkey',
+        description: 'Fides Legal is a boutique law office in Istanbul providing clear, bilingual and solution‑oriented legal services to foreigners and expats in Turkey across immigration, property, employment and civil law.',
+        keywords: 'Immigration Lawyer in Istanbul, English-Speaking Lawyer in Turkey, Lawyer for Foreigners in Turkey, Turkish Citizenship Lawyer, Law Firm for Expats in Istanbul',
+        ogTitle: 'Fides Legal',
+        ogDesc: 'Clarity • Expertise • Trust — Your trusted legal partner in Turkey.'
+      },
+      tr: {
+        lang: 'tr',
+        title: 'Fides Legal | Türkiye’de Güvenilir Hukuk Ortağınız',
+        description: 'Fides Legal, İstanbul’da faaliyet gösteren butik bir hukuk bürosu olarak yabancılar ve yerleşik yabancılar için göçmenlik, gayrimenkul, iş ve medeni hukuk alanlarında net ve çözüm odaklı iki dilli danışmanlık sunar.',
+        keywords: 'İstanbul Göçmenlik Avukatı, Türkiye’de İngilizce Avukat, Yabancılar için Avukat, Türk Vatandaşlığı Avukatı, İstanbul Hukuk Bürosu',
+        ogTitle: 'Fides Legal',
+        ogDesc: 'Şeffaflık • Uzmanlık • Güven — Türkiye’de güvenilir hukuk ortağınız.'
+      }
+    };
+
+    function urlWithLang(base, lang){
+      try{
+        const u = new URL(base, window.location.origin);
+        u.searchParams.set('lang', lang);
+        return u.href;
+      }catch(e){ return base; }
+    }
+
+    function applySEO(lang){
+      const conf = SEO[lang] || SEO.en;
+      document.documentElement.setAttribute('lang', conf.lang);
+      document.title = conf.title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      const metaKeys = document.querySelector('meta[name="keywords"]');
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      const ogDesc  = document.querySelector('meta[property="og:description"]');
+      if(metaDesc) metaDesc.setAttribute('content', conf.description);
+      if(metaKeys) metaKeys.setAttribute('content', conf.keywords);
+      if(ogTitle) ogTitle.setAttribute('content', conf.ogTitle);
+      if(ogDesc)  ogDesc.setAttribute('content', conf.ogDesc);
+
+      // canonical & hreflang
+      const current = new URL(window.location.href);
+      current.searchParams.set('lang', conf.lang);
+      const canon = document.getElementById('canonical-link');
+      if(canon) canon.setAttribute('href', current.href);
+      const altEn = document.getElementById('alt-en');
+      const altTr = document.getElementById('alt-tr');
+      const altDf = document.getElementById('alt-default');
+      if(altEn) altEn.setAttribute('href', urlWithLang(current, 'en'));
+      if(altTr) altTr.setAttribute('href', urlWithLang(current, 'tr'));
+      if(altDf) altDf.setAttribute('href', urlWithLang(current, conf.lang));
+
+      // JSON-LD (replace with lang-specific)
+      const oldLd = document.getElementById('ld-json');
+      if(oldLd) oldLd.remove();
+      const ld = {
+        '@context': 'https://schema.org',
+        '@type': 'LegalService',
+        'name': 'Fides Legal',
+        'inLanguage': conf.lang,
+        'address': {'@type':'PostalAddress','streetAddress':'Narmanlı Han, Beyoğlu','addressLocality':'Istanbul','addressCountry':'TR'},
+        'areaServed': 'TR',
+        'telephone': '+90 553 852 5274',
+        'email': 'avukatselimcelik@gmail.com'
+      };
+      const s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.id = 'ld-json';
+      s.textContent = JSON.stringify(ld);
+      document.head.appendChild(s);
+    }
+
+    function setLang(lang){
+      document.querySelectorAll('[data-lang]').forEach(el=>{ el.style.display=(el.getAttribute('data-lang')===lang)?'block':'none' });
+      document.querySelectorAll('[data-show-lang]').forEach(el=>{ el.textContent=lang.toUpperCase() });
+      localStorage.setItem('fides_lang',lang);
+      // push SEO-friendly URL
+      const u = new URL(window.location.href);
+      u.searchParams.set('lang', lang);
+      history.replaceState({}, '', u);
+      applySEO(lang);
+    }
+
+    function setTheme(mode){
+      const body=document.body;
+      if(mode==='dark'){ body.classList.add('dark') } else { body.classList.remove('dark') }
+      localStorage.setItem('fides_theme',mode);
+      document.querySelectorAll('[data-show-theme]').forEach(el=>{ el.textContent = mode==='dark' ? 'Dark' : 'Light' })
+    }
+
+    document.addEventListener('DOMContentLoaded',()=>{
+      // resolve initial language from URL > localStorage > browser
+      const urlLang = new URLSearchParams(window.location.search).get('lang');
+      const cachedLang = urlLang || localStorage.getItem('fides_lang') || (navigator.language||'en').slice(0,2).toLowerCase();
+      const lang = (cachedLang==='tr') ? 'tr' : 'en';
+      setLang(lang);
+      const cachedTheme = localStorage.getItem('fides_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+      setTheme(cachedTheme);
+      // set initial alternate/canonical once
+      applySEO(lang);
+    });
   </script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"Fides Legal","address":{"@type":"PostalAddress","streetAddress":"Narmanlı Han, Beyoğlu","addressLocality":"Istanbul","addressCountry":"TR"},"areaServed":"TR","telephone":"+90 553 852 5274","email":"avukatselimcelik@gmail.com"}</script>
+  <!-- Removed static JSON-LD; injected dynamically per language by applySEO() -->
 </head>
 <body>
   <header>
     <div class="container nav">
-      <div class="brand"><img src="images/FİDES LEGAL LOGO.png" alt="Fides Legal Logo" loading="lazy" /><span>Fides Legal</span></div>
+      <div class="brand"><img src="images/logo.webp" alt="Fides Legal Logo" loading="lazy" /><span>Fides Legal</span></div>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
