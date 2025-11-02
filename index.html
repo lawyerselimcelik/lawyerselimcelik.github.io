@@ -1,265 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Fides Legal</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-
-  <!-- Favicons -->
-  <!-- <link rel="icon" href="https://builder.bootstrapmade.com/assets/img/favicon.png" type="image/png"> -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  
-  <style id="builder-fonts-styles"></style>
-  <link href="https://builder.bootstrapmade.com/static/vendors/bootstrap/css/bootstrap.css?v=29" rel="stylesheet">
-  <link href="https://builder.bootstrapmade.com/static/vendors/bootstrap-icons/bootstrap-icons.css?v=29" rel="stylesheet">
-  <link href="https://builder.bootstrapmade.com/assets/vs/editor/editor.main.css?v=522" rel="stylesheet" data-name="vs/editor/editor.main">
-  <link href="https://builder.bootstrapmade.com/assets/css/main.css?v=1761313893176192735818295225.3.8" rel="stylesheet" id="main-css">
-
-  <!-- =======================================================
-  * Template Name: FolioOne
-  * Template URL: https://bootstrapmade.com/folioone-bootstrap-portfolio-website-template/
-  * Updated: Aug 23 2025 with Bootstrap v5.3.7
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fides Legal | Your Trusted Legal Partner in Turkey</title>
+  <meta name="description" content="Fides Legal is a boutique law office in Istanbul providing clear, solution‑oriented legal services to foreigners and expats in Turkey across immigration, property, employment and civil law." />
+  <meta name="keywords" content="Immigration Lawyer in Istanbul, English-Speaking Lawyer in Turkey, Lawyer for Foreigners in Turkey, Turkish Citizenship Lawyer, Law Firm for Expats in Istanbul" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#1c9a5f; /* Reflex‑ish clean green */
+      --dark:#0f172a;
+      --muted:#64748b;
+      --light:#f8fafc;
+      --border:#e2e8f0;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;color:#0b1220;background:#ffffff;line-height:1.6}
+    a{color:var(--green);text-decoration:none}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:50}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:.5rem;align-items:center;font-weight:700;color:var(--dark)}
+    .brand-mark{width:10px;height:22px;background:var(--green);border-radius:2px}
+    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+    nav a{color:#111827;font-weight:600}
+    .lang-toggle{border:1px solid var(--border);padding:6px 10px;border-radius:10px;background:#fff;cursor:pointer}
+    .hero{background:linear-gradient(180deg,#f6fffb,transparent);padding:72px 0 48px}
+    .hero h1{font-size:38px;line-height:1.2;margin:0 0 12px;color:#0b1220}
+    .hero p{font-size:18px;color:#334155;margin:0}
+    .pill{display:inline-block;background:#e9f8f1;color:#065f46;border:1px solid #b7ebd0;padding:6px 12px;border-radius:999px;font-weight:600;font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{border:1px solid var(--border);border-radius:16px;padding:18px;background:#fff}
+    .card h3{margin:0 0 8px;font-size:18px;color:#0f172a}
+    .card p{margin:0;color:#334155;font-size:15px}
+    section{padding:56px 0}
+    .section-title{font-size:26px;margin:0 0 6px;color:#0b1220}
+    .section-sub{margin:0 0 24px;color:var(--muted)}
+    .about{display:grid;grid-template-columns:1.25fr .75fr;gap:28px}
+    .about .box{border:1px solid var(--border);padding:22px;border-radius:16px}
+    .kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#075e54;font-weight:700;margin-bottom:6px}
+    .contact{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .contact .tile{border:1px dashed var(--border);border-radius:16px;padding:18px}
+    footer{border-top:1px solid var(--border);padding:28px 0;color:#64748b;background:#fafafa}
+    .muted{color:#64748b}
+    .divider{height:1px;background:var(--border);margin:24px 0}
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .hero h1{font-size:30px}
+    }
+    /* TR hidden by default; toggled via JS */
+    [data-lang="tr"]{display:none}
+  </style>
+  <script>
+    function setLang(lang){
+      document.querySelectorAll('[data-lang]')
+        .forEach(el=>{ el.style.display = (el.getAttribute('data-lang')===lang)?'block':'none'; });
+      document.querySelectorAll('[data-show-lang]')
+        .forEach(el=>{ el.textContent = lang.toUpperCase(); });
+      localStorage.setItem('fides_lang',lang);
+    }
+    document.addEventListener('DOMContentLoaded',()=>{
+      const cached = localStorage.getItem('fides_lang') || 'en';
+      setLang(cached);
+    });
+  </script>
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Fides Legal",
+    "image": "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Narmanlı Han, Beyoğlu",
+      "addressLocality": "Istanbul",
+      "addressCountry": "TR"
+    },
+    "areaServed": "TR",
+    "telephone": "+90 553 852 5274",
+    "email": "avukatselimcelik@mail.com",
+    "url": "https://fideslegal.example"
+  }
+  </script>
 </head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
-
-      <!-- <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-      <img src="assets/img/logo.webp" alt="">
-      <h1 class="sitename">FolioOne</h1> 
-    </a> -->
-
-      <nav id="navmenu" class="navmenu">
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="brand-mark" aria-hidden></span>Fides Legal</div>
+      <nav>
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-
-          <!--<li><a href="resume.html">Resume</a></li>-->
-
-          <li><a href="services.html">Services</a></li>
-
-          <!--<li><a href="portfolio.html">Portfolio</a></li>-->
-          <!--<li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>-->
-
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <div class="header-social-links">
-        <!-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a> -->
-        <!-- <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> -->
-        <!-- <a href="#" class="instagram"><i class="bi bi-instagram"></i></a> -->
-
-        <a href="https://www.linkedin.com/in/lawyer-selim-celik" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
-
+      <button class="lang-toggle" onclick="setLang(document.querySelector('[data-show-lang]').textContent.toLowerCase()==='en'?'tr':'en')">
+        <span class="muted" style="margin-right:6px">Language</span>
+        <strong data-show-lang>EN</strong>
+      </button>
     </div>
   </header>
 
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 align-items-center">
-          <div class="col-lg-6 order-2 order-lg-1">
-            <div class="hero-content">
-              <h1 data-aos="fade-up" data-aos-delay="200">Hello, I'm <span class="highlight">Brandon Johnson</span></h1>
-              <h2 data-aos="fade-up" data-aos-delay="300">Creative <span class="typed" data-typed-items="UI/UX Designer, Web Developer, Digital Artist, Brand Strategist"></span></h2>
-              <p data-aos="fade-up" data-aos-delay="400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
-                <a href="portfolio.html" class="btn btn-primary">View My Work</a>
-                <a href="contact.html" class="btn btn-outline">Get In Touch</a>
-              </div>
-              <div class="social-links" data-aos="fade-up" data-aos-delay="600">
-                <!-- <a href="#"><i class="bi bi-twitter"></i></a> -->
-                <!-- <a href="#"><i class="bi bi-github"></i></a> -->
-                <!-- <a href="#"><i class="bi bi-dribbble"></i></a> -->
-                 
-                <a href="https://www.linkedin.com/in/lawyer-selim-celik"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 order-1 order-lg-2">
-            <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
-              <div class="image-wrapper">
-                <img src="assets/img/profile/profile-square-11.webp" alt="Sarah Mitchell" class="img-fluid">
-                <div class="floating-elements">
-                  <div class="floating-card design" data-aos="fade-left" data-aos-delay="700">
-                    <i class="bi bi-palette"></i>
-                    <span>Design</span>
-                  </div>
-                  <div class="floating-card code" data-aos="fade-right" data-aos-delay="800">
-                    <i class="bi bi-code-slash"></i>
-                    <span>Code</span>
-                  </div>
-                  <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900">
-                    <i class="bi bi-lightbulb"></i>
-                    <span>Ideas</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Hero Section -->
-
+  <main id="home" class="hero">
+    <div class="container">
+      <span class="pill" data-lang="en">Clarity • Expertise • Trust</span>
+      <span class="pill" data-lang="tr">Şeffaflık • Uzmanlık • Güven</span>
+      <h1 data-lang="en">Your trusted legal partner in Turkey.</h1>
+      <h1 data-lang="tr">Türkiye’de güvenilir hukuk ortağınız.</h1>
+      <p data-lang="en">Fides Legal is a boutique law office in Istanbul offering clear, solution‑oriented legal services to foreigners and expats across immigration, property, employment, and civil law.</p>
+      <p data-lang="tr">Fides Legal, İstanbul’da faaliyet gösteren butik bir hukuk bürosu olarak; göçmenlik, gayrimenkul, iş ve medeni hukuk alanlarında yabancılara ve yerleşik yabancılara şeffaf ve çözüm odaklı hizmet sunar.</p>
+    </div>
   </main>
 
-  <footer id="footer" class="footer">
-
+  <section id="services">
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">FolioOne</strong> <span>All Rights Reserved<br></span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
-        <!-- <a href=""><i class="bi bi-facebook"></i></a> -->
-        <!-- <a href=""><i class="bi bi-instagram"></i></a> -->
+      <h2 class="section-title" data-lang="en">Practice Areas</h2>
+      <h2 class="section-title" data-lang="tr">Hizmet Alanları</h2>
+      <p class="section-sub" data-lang="en">Practical, compliant, and timely support at every stage of your legal process.</p>
+      <p class="section-sub" data-lang="tr">Hukuki sürecinizin her aşamasında pratik, mevzuata uyumlu ve zamanında destek.</p>
 
-        <a href="https://www.linkedin.com/in/lawyer-selim-celik"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      <div class="grid">
+        <div class="card">
+          <h3 data-lang="en">Foreigner & Immigration Law</h3>
+          <h3 data-lang="tr">Yabancılar ve Göç Hukuku</h3>
+          <p data-lang="en">Residence permits (short/long‑term, family, student), work permits, citizenship by investment, deportation/entry‑ban appeals, apostille & legalization.</p>
+          <p data-lang="tr">Oturma izinleri (kısa/uzun dönem, aile, öğrenci), çalışma izni, yatırım yoluyla vatandaşlık, sınır dışı/ giriş yasağı itirazları, apostil ve tasdik işlemleri.</p>
+        </div>
+        <div class="card">
+          <h3 data-lang="en">Construction & Real Estate Law</h3>
+          <h3 data-lang="tr">İnşaat ve Gayrimenkul Hukuku</h3>
+          <p data-lang="en">Property purchase & due diligence, construction contracts, dispute resolution, land registry and condominium procedures.</p>
+          <p data-lang="tr">Gayrimenkul alımı ve hukuki inceleme, inşaat sözleşmeleri, uyuşmazlıkların çözümü, tapu ve kat mülkiyeti işlemleri.</p>
+        </div>
+        <div class="card">
+          <h3 data-lang="en">Labour & Employment Law</h3>
+          <h3 data-lang="tr">İş ve Çalışma Hukuku</h3>
+          <p data-lang="en">Employment contracts, termination processes, severance & compensation claims, compliance and dispute prevention for companies.</p>
+          <p data-lang="tr">İş sözleşmeleri, fesih süreçleri, kıdem/ tazminat talepleri, şirketler için uyum danışmanlığı ve uyuşmazlıkların önlenmesi.</p>
+        </div>
+        <div class="card">
+          <h3 data-lang="en">Civil & Contract Law</h3>
+          <h3 data-lang="tr">Medeni ve Sözleşmeler Hukuku</h3>
+          <p data-lang="en">Divorce & family cases, personal status matters, and birth, death, marriage certificate procedures handled with discretion and accuracy.</p>
+          <p data-lang="tr">Boşanma ve aile davaları, şahıs halleri, doğum‑ölüm‑evlenme belgesi işlemleri; gizlilik ve titizlikle yürütülür.</p>
+        </div>
+        <div class="card">
+          <h3 data-lang="en">Debt Collection & Enforcement</h3>
+          <h3 data-lang="tr">İcra ve Alacak Takibi</h3>
+          <p data-lang="en">Execution of court decisions, representation before enforcement offices, and collection of commercial & individual receivables.</p>
+          <p data-lang="tr">Mahkeme kararlarının icrası, icra daireleri nezdinde temsil ve ticari/ bireysel alacakların tahsili.</p>
+        </div>
+        <div class="card">
+          <h3 data-lang="en">Matrimony Law / Marriage in Turkey</h3>
+          <h3 data-lang="tr">Aile Hukuku / Türkiye’de Evlenme</h3>
+          <p data-lang="en">Civil marriage procedures, document preparation, recognition of foreign marriages, and prenuptial agreements.</p>
+          <p data-lang="tr">Resmî nikâh işlemleri, evrak hazırlığı, yabancı evliliklerin tanınması ve evlilik sözleşmeleri.</p>
+        </div>
       </div>
     </div>
+  </section>
 
+  <section id="about">
+    <div class="container about">
+      <div class="box">
+        <div class="kicker" data-lang="en">About Attorney Selim Çelik</div>
+        <div class="kicker" data-lang="tr">Avukat Selim Çelik Hakkında</div>
+        <h2 class="section-title" data-lang="en">Boutique, founder‑led, and client‑focused.</h2>
+        <h2 class="section-title" data-lang="tr">Butik, kurucu liderliğinde ve müvekkil odaklı.</h2>
+        <p data-lang="en">I am the founding attorney of Fides Legal, providing clear, strategic and ethical legal support to foreigners and expats across Türkiye. A graduate of Istanbul University Faculty of Law, I combine legal expertise with sworn English and jurisdictional translation skills to represent clients confidently in Turkish courts and administrative bodies.</p>
+        <p data-lang="tr">Fides Legal’in kurucu avukatı olarak, Türkiye genelinde yabancılara ve yerleşik yabancılara açık, stratejik ve etik hukuki destek sunuyorum. İstanbul Üniversitesi Hukuk Fakültesi mezunu olarak; yeminli İngilizce ve bilirkişi tercümanlığı yetkinliğimle müvekkillerimi Türk mahkemeleri ve idari mercilerde güvenle temsil ediyorum.</p>
+      </div>
+      <div class="box">
+        <h3 class="section-title" style="font-size:20px" data-lang="en">Why choose Fides Legal?</h3>
+        <h3 class="section-title" style="font-size:20px" data-lang="tr">Neden Fides Legal?</h3>
+        <ul class="muted" data-lang="en">
+          <li>Clear, bilingual communication (EN/TR)</li>
+          <li>Founder‑led single point of contact</li>
+          <li>Solution‑oriented, timely execution</li>
+          <li>Strong focus on immigration & property matters</li>
+        </ul>
+        <ul class="muted" data-lang="tr">
+          <li>Net ve iki dilli iletişim (EN/TR)</li>
+          <li>Kurucu avukatla tek muhatap</li>
+          <li>Çözüm odaklı ve zamanında süreç yönetimi</li>
+          <li>Göçmenlik ve gayrimenkule odaklanan güçlü uzmanlık</li>
+        </ul>
+        <div class="divider"></div>
+        <p class="muted" data-lang="en" style="font-size:12px">*Fides Legal currently serves clients as a boutique solo practice led by Attorney Selim Çelik.</p>
+        <p class="muted" data-lang="tr" style="font-size:12px">*Fides Legal, Av. Selim Çelik liderliğinde butik bir tek avukatlı büro olarak hizmet vermektedir.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background:#fbfdfc">
+    <div class="container">
+      <h2 class="section-title" data-lang="en">Contact</h2>
+      <h2 class="section-title" data-lang="tr">İletişim</h2>
+      <p class="section-sub" data-lang="en">Get in touch to discuss your case or request a consultation.</p>
+      <p class="section-sub" data-lang="tr">Dosyanızı görüşmek veya danışmanlık talep etmek için iletişime geçin.</p>
+
+      <div class="contact">
+        <div class="tile">
+          <strong data-lang="en">Phone</strong>
+          <strong data-lang="tr">Telefon</strong>
+          <div><a href="tel:+905538525274">+90 553 852 5274</a></div>
+        </div>
+        <div class="tile">
+          <strong>Email</strong>
+          <div><a href="mailto:avukatselimcelik@mail.com">avukatselimcelik@mail.com</a></div>
+        </div>
+        <div class="tile">
+          <strong data-lang="en">Address</strong>
+          <strong data-lang="tr">Adres</strong>
+          <div>Beyoğlu, Narmanlı Han, Istanbul</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Fides Legal. All rights reserved.</div>
+      <div class="muted">Made with care in Istanbul.</div>
+    </div>
   </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
-
 </html>
-
-<!-- 
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title></title>
-  <link rel="icon" href="https://builder.bootstrapmade.com/assets/img/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet">
-  <style id="builder-fonts-styles"></style>
-  <link href="https://builder.bootstrapmade.com/static/vendors/bootstrap/css/bootstrap.css?v=29" rel="stylesheet">
-  <link href="https://builder.bootstrapmade.com/static/vendors/bootstrap-icons/bootstrap-icons.css?v=29"
-    rel="stylesheet">
-  <link rel="stylesheet" data-name="vs/editor/editor.main"
-    href="https://builder.bootstrapmade.com/assets/vs/editor/editor.main.css?v=522">
-  <link href="https://builder.bootstrapmade.com/assets/css/main.css?v=1761313893176192735818295225.3.8" rel="stylesheet"
-    id="main-css">
-</head>
-
-<body class="builder-mode">
-  <div class="toggle-loading position-fixed">
-    <div class="loader"></div>
-  </div>
-  <div id="builder-container">
-    <div id="builder-wrapper"><iframe id="builder" frameborder="0"
-        sandbox="allow-same-origin allow-scripts allow-forms"></iframe></div>
-  </div>
-  <div id="builder-sizes"></div>
-  <div id="left-panel">
-    <div class="panel-item panel-components panel-section-components d-none"></div>
-    <div class="panel-item panel-components panel-widget-components d-none"></div>
-  </div>
-  <div id="errorModal" class="modal fade">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header d-flex justify-content-between">
-          <h5 class="modal-title">Error</h5> <i class="bi bi-x btn-close" data-bs-dismiss="modal"></i>
-        </div>
-        <div class="modal-body" id="errorModalBody">
-          <p>Something went wrong. Please try again.</p>
-        </div>
-        <div class="modal-footer d-flex justify-content-center"> <button type="button" class="btn btn-secondary"
-            data-bs-dismiss="modal">Close</button></div>
-      </div>
-    </div>
-  </div>
-  <script>var require = { paths: { vs: 'https://builder.bootstrapmade.com/assets/vs' } }; const builderConfig = { aUrl: 'https://builder.bootstrapmade.com', wUrl: 'https://bootstrapmade.com', cUrl: 'https://builder.bootstrapmade.com/static', vUrl: 'https://builder.bootstrapmade.com/static/vendors', pId: 'FolioOne', versions: ['1761313893', '1761927358', '18', '29', '522', '5.3.8'], mode: 'demo', dm: false };</script>
-  <script src="https://builder.bootstrapmade.com/assets/js/main.min.js?v=1761313893176192735818295225.3.8"
-    id="main-js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-623MLXN245"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-623MLXN245');</script>
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-    data-cf-beacon='{"version":"2024.11.0","token":"68c5ca450bae485a842ff76066d69420","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-    crossorigin="anonymous"></script>
-</body> 
-
--->
-
