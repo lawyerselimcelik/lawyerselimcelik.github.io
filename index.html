@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fisdes Legal | Your Trusted Legal Partner in Turkey</title>
-  <meta name="description" content="Fisdes Legal is a boutique law office in Istanbul providing clear, bilingual and solution‑oriented legal services to foreigners and expats in Turkey across immigration, property, employment and civil law." />
+  <title>Fides Legal | Your Trusted Legal Partner in Turkey</title>
+  <meta name="description" content="Fides Legal is a boutique law office in Istanbul providing clear, bilingual and solution‑oriented legal services to foreigners and expats in Turkey across immigration, property, employment and civil law." />
   <meta name="keywords" content="Immigration Lawyer in Istanbul, English-Speaking Lawyer in Turkey, Lawyer for Foreigners in Turkey, Turkish Citizenship Lawyer, Law Firm for Expats in Istanbul" />
-  <meta property="og:title" content="Fisdes Legal" />
+  <meta property="og:title" content="Fides Legal" />
   <meta property="og:description" content="Clarity • Expertise • Trust — Your trusted legal partner in Turkey." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,18 +81,18 @@
     const SEO = {
       en: {
         lang: 'en',
-        title: 'Fisdes Legal | Your Trusted Legal Partner in Turkey',
-        description: 'Fisdes Legal is a boutique law office in Istanbul providing clear, bilingual and solution‑oriented legal services to foreigners and expats in Turkey across immigration, property, employment and civil law.',
+        title: 'Fides Legal | Your Trusted Legal Partner in Turkey',
+        description: 'Fides Legal is a boutique law office in Istanbul providing clear, bilingual and solution‑oriented legal services to foreigners and expats in Turkey across immigration, property, employment and civil law.',
         keywords: 'Immigration Lawyer in Istanbul, English-Speaking Lawyer in Turkey, Lawyer for Foreigners in Turkey, Turkish Citizenship Lawyer, Law Firm for Expats in Istanbul',
-        ogTitle: 'Fisdes Legal',
+        ogTitle: 'Fides Legal',
         ogDesc: 'Clarity • Expertise • Trust — Your trusted legal partner in Turkey.'
       },
       tr: {
         lang: 'tr',
-        title: 'Fisdes Legal | Türkiye’de Güvenilir Hukuk Ortağınız',
-        description: 'Fisdes Legal, İstanbul’da faaliyet gösteren butik bir hukuk bürosu olarak yabancılar ve yerleşik yabancılar için göçmenlik, gayrimenkul, iş ve medeni hukuk alanlarında net ve çözüm odaklı iki dilli danışmanlık sunar.',
+        title: 'Fides Legal | Türkiye’de Güvenilir Hukuk Ortağınız',
+        description: 'Fides Legal, İstanbul’da faaliyet gösteren butik bir hukuk bürosu olarak yabancılar ve yerleşik yabancılar için göçmenlik, gayrimenkul, iş ve medeni hukuk alanlarında net ve çözüm odaklı iki dilli danışmanlık sunar.',
         keywords: 'İstanbul Göçmenlik Avukatı, Türkiye’de İngilizce Avukat, Yabancılar için Avukat, Türk Vatandaşlığı Avukatı, İstanbul Hukuk Bürosu',
-        ogTitle: 'Fisdes Legal',
+        ogTitle: 'Fides Legal',
         ogDesc: 'Şeffaflık • Uzmanlık • Güven — Türkiye’de güvenilir hukuk ortağınız.'
       }
     };
@@ -136,7 +136,7 @@
       const ld = {
         '@context': 'https://schema.org',
         '@type': 'LegalService',
-        'name': 'Fisdes Legal',
+        'name': 'Fides Legal',
         'inLanguage': conf.lang,
         'address': {'@type':'PostalAddress','streetAddress':'Narmanlı Han, Beyoğlu','addressLocality':'Istanbul','addressCountry':'TR'},
         'areaServed': 'TR',
@@ -153,7 +153,7 @@
     function setLang(lang){
       document.querySelectorAll('[data-lang]').forEach(el=>{ el.style.display=(el.getAttribute('data-lang')===lang)?'block':'none' });
       document.querySelectorAll('[data-show-lang]').forEach(el=>{ el.textContent=lang.toUpperCase() });
-      localStorage.setItem('fisdes_lang',lang);
+      localStorage.setItem('fides_lang',lang);
       // push SEO-friendly URL
       const u = new URL(window.location.href);
       u.searchParams.set('lang', lang);
@@ -164,17 +164,17 @@
     function setTheme(mode){
       const body=document.body;
       if(mode==='dark'){ body.classList.add('dark') } else { body.classList.remove('dark') }
-      localStorage.setItem('fisdes_theme',mode);
+      localStorage.setItem('fides_theme',mode);
       document.querySelectorAll('[data-show-theme]').forEach(el=>{ el.textContent = mode==='dark' ? 'Dark' : 'Light' })
     }
 
     document.addEventListener('DOMContentLoaded',()=>{
       // resolve initial language from URL > localStorage > browser
       const urlLang = new URLSearchParams(window.location.search).get('lang');
-      const cachedLang = urlLang || localStorage.getItem('fisdes_lang') || (navigator.language||'en').slice(0,2).toLowerCase();
+      const cachedLang = urlLang || localStorage.getItem('fides_lang') || (navigator.language||'en').slice(0,2).toLowerCase();
       const lang = (cachedLang==='tr') ? 'tr' : 'en';
       setLang(lang);
-      const cachedTheme = localStorage.getItem('fisdes_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+      const cachedTheme = localStorage.getItem('fides_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
       setTheme(cachedTheme);
       // set initial alternate/canonical once
       applySEO(lang);
@@ -185,7 +185,7 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand"><img src="images/logo.webp" alt="Fisdes Legal Logo" loading="lazy" /><span>Fisdes Legal</span></div>
+      <div class="brand"><img src="images/logo.webp" alt="Fides Legal Logo" loading="lazy" /><span>Fides Legal</span></div>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
@@ -284,17 +284,17 @@
         <div class="kicker" data-lang="tr">Avukat Selim Çelik Hakkında</div>
         <h2 class="section-title" data-lang="en">Boutique, founder‑led, and client‑focused.</h2>
         <h2 class="section-title" data-lang="tr">Butik, kurucu liderliğinde ve müvekkil odaklı.</h2>
-        <p data-lang="en">Founding attorney of Fisdes Legal. Delivering clear, strategic and ethical representation. Istanbul University Faculty of Law graduate; sworn English & jurisdictional translator, enabling accurate advocacy before courts and administrative bodies.</p>
-        <p data-lang="tr">Fisdes Legal’in kurucu avukatı. Net, stratejik ve etik temsil. İstanbul Üniversitesi Hukuk Fakültesi mezunu; yeminli İngilizce ve bilirkişi tercümanı olarak mahkemeler ve idari merciler nezdinde doğru ve güvenilir temsil sağlar.</p>
+        <p data-lang="en">Founding attorney of Fides Legal. Delivering clear, strategic and ethical representation. Istanbul University Faculty of Law graduate; sworn English & jurisdictional translator, enabling accurate advocacy before courts and administrative bodies.</p>
+        <p data-lang="tr">Fides Legal’in kurucu avukatı. Net, stratejik ve etik temsil. İstanbul Üniversitesi Hukuk Fakültesi mezunu; yeminli İngilizce ve bilirkişi tercümanı olarak mahkemeler ve idari merciler nezdinde doğru ve güvenilir temsil sağlar.</p>
       </div>
       <div class="box">
-        <h3 class="section-title" style="font-size:20px" data-lang="en">Why choose Fisdes Legal?</h3>
-        <h3 class="section-title" style="font-size:20px" data-lang="tr">Neden Fisdes Legal?</h3>
+        <h3 class="section-title" style="font-size:20px" data-lang="en">Why choose Fides Legal?</h3>
+        <h3 class="section-title" style="font-size:20px" data-lang="tr">Neden Fides Legal?</h3>
         <ul class="muted" data-lang="en"><li>Clear, bilingual communication (EN/TR)</li><li>Founder‑led single point of contact</li><li>Solution‑oriented, timely execution</li><li>Focused expertise in immigration & property</li></ul>
         <ul class="muted" data-lang="tr"><li>Net ve iki dilli iletişim (EN/TR)</li><li>Kurucu avukatla tek muhatap</li><li>Çözüm odaklı ve zamanında süreç yönetimi</li><li>Göçmenlik ve gayrimenkulde odaklı uzmanlık</li></ul>
         <div class="divider"></div>
-        <p class="muted" data-lang="en" style="font-size:12px">*Fisdes Legal currently serves clients as a boutique solo practice led by Attorney Selim Çelik.</p>
-        <p class="muted" data-lang="tr" style="font-size:12px">*Fisdes Legal, Av. Selim Çelik liderliğinde butik bir tek avukatlı büro olarak hizmet vermektedir.</p>
+        <p class="muted" data-lang="en" style="font-size:12px">*Fides Legal currently serves clients as a boutique solo practice led by Attorney Selim Çelik.</p>
+        <p class="muted" data-lang="tr" style="font-size:12px">*Fides Legal, Av. Selim Çelik liderliğinde butik bir tek avukatlı büro olarak hizmet vermektedir.</p>
       </div>
     </div>
   </section>
@@ -353,11 +353,12 @@
 
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div>© <span id="y"></span> Fisdes Legal. All rights reserved.</div>
+      <div>© <span id="y"></span> Fides Legal. All rights reserved.</div>
       <div class="muted">Made with care in Istanbul.</div>
     </div>
   </footer>
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
+
 
